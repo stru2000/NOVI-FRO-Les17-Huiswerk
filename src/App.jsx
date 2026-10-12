@@ -1,26 +1,32 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import './App.css';
+import {AuthContext} from './context/AuthContext';
+import {useContext} from "react";
 
 function App() {
-  return (
-    <>
-      <NavBar />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
-      </div>
-    </>
-  );
+    const data = useContext(AuthContext);
+    return (
+        <>
+            <NavBar/>
+            <div className="content">
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/profile" element={data.isAuth ? <Profile /> : <Navigate to="/signup" replace />}/>
+                    <Route path="/signin" element={<SignIn/>}/>
+                    <Route path="/signup" element={<SignUp/>}/>
+                </Routes>
+            </div>
+        </>
+    );
 }
 
 export default App;
+
+// <Route path="/profile" element={data.isAuth ? <Profile /> : null}/>
+// {data.isAuth && <Route path="/profile" element={<Profile />} />}
