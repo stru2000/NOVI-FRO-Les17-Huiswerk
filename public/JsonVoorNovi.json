@@ -1,0 +1,70 @@
+{
+  "collections": [
+    {
+      "name": "secrets",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "permissions": {
+        "GET": [
+          "user"
+        ],
+        "POST": [
+          "user"
+        ],
+        "PUT": [
+          "user"
+        ],
+        "PATCH": [
+          "user"
+        ],
+        "DELETE": [
+          "user"
+        ]
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "regular.user@example.com",
+      "password": "regular123",
+      "roles": [
+        "anonymous",
+        "user"
+      ]
+    },
+    {
+      "id": 2,
+      "email": "another.user@example.com",
+      "password": "another123",
+      "roles": [
+        "anonymous",
+        "user"
+      ]
+    }
+  ],
+  "data": {
+    "secrets": [
+      {
+        "id": 1,
+        "title": "Het geheim achter een goed cijfer",
+        "content": "Hoge cijfers halen doe je niet door goed je best te doen of hard te studeren. Een hoog cijfer haal je natuurlijk alleen door erachter te komen wie jouw eindopdracht nakijkt, en diegene erg veel chocolaatjes en bloemen te sturen."
+      }
+    ]
+  }
+}
