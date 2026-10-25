@@ -35,6 +35,7 @@ export function AuthContextProvider({ children }) {
                         user: {
                             id: userData.data.id,
                             email: userData.data.email,
+                            roles: userData.data.roles,
                         },
                         status: 'done',
                     })
@@ -81,6 +82,7 @@ export function AuthContextProvider({ children }) {
             user: {
                 id: userData.data.id,
                 email: userData.data.email,
+                roles: userData.data.roles,
             },
         });
         console.log("Gebruiker is ingelogd!");

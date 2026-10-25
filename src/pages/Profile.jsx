@@ -26,8 +26,7 @@ function Profile() {
                     }
                 );
 
-                console.log('Response data:', secretResponse.data);
-                console.log('Data uit profiel:', secretResponse);
+                console.log('Profile - Data uit secrets:', secretResponse);
 
                 setSecrets(secretResponse.data);
             } catch (error) {
@@ -38,7 +37,7 @@ function Profile() {
                 }
             }
         }
-
+        console.log('UserData uit Profile',data);
         getSecrets();
 
         return () => {
@@ -54,7 +53,7 @@ function Profile() {
                 <h2>Gegevens</h2>
 
                 <p>
-                    <strong>Gebruikersnaam:</strong> WERKT NIET NOVI!!!
+                    <strong>Gebruikersnaam:</strong> WIP
                 </p>
 
                 <p>
